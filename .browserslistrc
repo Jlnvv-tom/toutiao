@@ -1,3 +1,7 @@
-> 1%
-last 2 versions
-not dead
+#1%是值兼容大于百分之一的用户使用的浏览器
+#> 1%
+#兼容浏览器的后两个版本
+#last 2 versions
+#not dead
+Android >= 4.0
+iOS >= 8
