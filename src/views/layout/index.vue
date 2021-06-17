@@ -4,7 +4,6 @@
 
 <router-view/>
 <!--  底部导航栏-->
-  <h1>layout页面</h1>
   <van-tabbar v-model="active" route>
     <van-tabbar-item to="/" icon="wap-home">首页</van-tabbar-item>
     <van-tabbar-item to="/qa" icon="chat">问答</van-tabbar-item>
@@ -26,5 +25,7 @@ export default {
 </script>
 
 <style scoped>
-
+/* .layout-container{
+  background-color: #f5f5f5;
+} */
 </style>

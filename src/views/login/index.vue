@@ -44,10 +44,10 @@
         />
         <van-button
         v-else
-        @click="onSendSms"
         size="small"
         type="info"
         :loading="isSendSmsLoading"
+        @click.prevent="onSendSms"
         >发送验证码</van-button>
       </template>
     </van-field>
@@ -109,6 +109,9 @@ export default {
         Toast.success('登录成功')
         // 将后端返回的用户登录状态（token等数据)放到Vuex容器中
         this.$store.commit('setUser', res.data.data)
+
+        // 登录成功，跳转为原来的页面
+        this.$router.bock() // 先用，有更好的方法
       } catch (err) {
         // console.log('登录失败', err)
         Toast.fail('登录失败!')
