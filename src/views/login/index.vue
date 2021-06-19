@@ -2,7 +2,7 @@
 <div class="login-container">
   <van-nav-bar
     class="app-nav-bar"
-    title="登录"
+    title="登录页面"
     left-arrow
     @click-left="$router.back()"
   />
@@ -60,8 +60,6 @@
       >登录</van-button>
     </div>
   </van-form>
-
-  <h1>登录页面</h1>
 </div>
 </template>
 
@@ -74,8 +72,8 @@ export default {
   data () {
     return {
       user: {
-        mobile: '', // 手机号
-        code: '' // 验证码
+        mobile: '13911111111', // 手机号
+        code: '246810' // 验证码
       },
       isCountDownShow: false, // 控制倒计时按钮和发送按钮的显示状态
       isSendSmsLoading: false, // 发送验证码按钮的loading状态
@@ -86,7 +84,7 @@ export default {
         ],
         code: [
           { required: true, message: '请输入验证码' },
-          { pattern: /^d{6}$/, message: '验证码格式错误' }
+          { pattern: /^\d{6}$/, message: '验证码格式错误' }
         ]
       }
     }
@@ -99,9 +97,7 @@ export default {
         duration: 0 // 持续时间
       })
       // 1、找到数据接口
-
       // 2、封装请求方法
-
       // 3、请求验证登录
       try {
         const res = await login(this.user)
@@ -111,9 +107,9 @@ export default {
         this.$store.commit('setUser', res.data.data)
 
         // 登录成功，跳转为原来的页面
-        this.$router.bock() // 先用，有更好的方法
+        this.$router.back() // 先用，有更好的方法
       } catch (err) {
-        // console.log('登录失败', err)
+        console.log('登录失败', err)
         Toast.fail('登录失败!')
       }
       // 4、处理响应结果

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// 导入时间处理模块工具
+import './utils/dayjs'
 
 // 加载Vant组件库和css样式
 import Vant from 'vant'

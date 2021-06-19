@@ -62,11 +62,11 @@
   <van-cell class="mb-4" title="小智同学" is-link to="/" />
 </van-cell-group>
 <van-cell
-v-if="user"
-class="logout-cell"
-title="退出登录"
-@click="onLogout"
-to="login"/>
+  v-if="user"
+  class="logout-cell"
+  title="退出登录"
+  @click="onLogout"
+  to="login"/>
 
 </div>
 </template>
@@ -85,7 +85,7 @@ export default {
     onLogout () {
       // 提示用户确认退出
       // 确认->处理退出
-      this.$Dialog.confirm({
+      this.$dialog.confirm({
         title: '退出提示',
         message: '确认退出吗'
       })
